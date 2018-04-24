@@ -25,7 +25,8 @@ function changeStrat(isWin){
       //if you win an A-2 bet change bet to A-1 bet
     }
     else if(state == 3){
-      //if you win a B-1 bet ...
+      //if you win a B-1 start over with an A-1 opposite of the previous win
+      state = 1;
     }
     else if(state == 4){
       state = 5;
@@ -77,9 +78,30 @@ function changeBet(isWin){
 
 }
 
+function changeHTML(){
+  var modelText = document.getElementById('model');
+  var amountText = document.getElementById('amount');
+  if(state == 1){
+    modelText.innerHTML = "A-1 OPPOSITE OF LAST WIN";
+  }
+  else if(state == 2){
+    modelText.innerHTML = "A-2 SAME AS LAST BET";
+  }
+  else if(state == 3){
+    modelText.innerHTML = "B-1 OPPOSITE OF LAST A-2 BET";
+  }
+  else if(state == 4){
+    modelText.innerHTML = "B-2 SAME AS LAST BET";
+  }
+
+  amountText.innerHTML = "BET " + bet;
+
+}
+
 function winfunction(){
   changeStrat(true);
   changeBet(true);
+  changeHTML();
   console.log("State:" + state);
   console.log("Registry:" + registry);
   console.log("Bet:" + bet);
@@ -88,6 +110,7 @@ function winfunction(){
 function losefunction(){
   changeStrat(false);
   changeBet(false);
+  changeHTML();
   console.log("State:" + state);
   console.log("Registry:" + registry);
   console.log("Bet:" + bet);

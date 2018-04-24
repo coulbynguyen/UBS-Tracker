@@ -81,6 +81,10 @@ function changeBet(isWin){
 function changeHTML(){
   var modelText = document.getElementById('model');
   var amountText = document.getElementById('amount');
+  var betBackground = document.getElementById('betBack');
+  var amountBackground = document.getElementById('amountBack');
+  amountBackground.classList.toggle("splash");
+  betBackground.classList.toggle("splash");
   if(state == 1){
     modelText.innerHTML = "A-1 OPPOSITE OF LAST WIN";
   }
@@ -93,9 +97,12 @@ function changeHTML(){
   else if(state == 4){
     modelText.innerHTML = "B-2 SAME AS LAST BET";
   }
+  else if(state == 5){
+    modelText.innerHTML = "A-1 SAME AS LAST BET";
+  }
 
   amountText.innerHTML = "BET " + bet;
-
+  // amountText.classList.toggle("splash");
 }
 
 function winfunction(){

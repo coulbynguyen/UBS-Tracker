@@ -1,0 +1,60 @@
+div{
+  /* border: 2px solid black; */
+  overflow: auto;
+}
+.strat{
+  width: 40%;
+  height: 120px;
+  float: left;
+  margin-left: 5%;
+  border: 2px solid black;
+  margin-bottom: 2.5%;
+  text-align: center;
+}
+.bet{
+  width: 40%;
+  height: 120px;
+  float: right;
+  margin-right: 5%;
+  margin-bottom: 2.5%;
+  border: 2px solid black;
+  text-align: center;
+}
+.textcenter{
+  font-size: 30px;
+  margin-top: 2%;
+}
+.win{
+  background-color: blue;
+  border-radius: 5%;
+  width: 40%;
+  height: 400px;
+  float: left;
+  margin-left: 5%;
+  text-align: center;
+}
+.lose{
+  background-color: red;
+  border-radius: 5%;
+  width: 40%;
+  height: 400px;
+  float: right;
+  margin-right: 5%;
+  text-align: center;
+}
+.win:hover{
+   color: #ffffff;
+   background-color: #000080;
+   box-shadow: 5px 10px #888888;
+}
+
+.lose:hover{
+  color: #ffffff;
+  background-color: #9f0d0d;
+  box-shadow: 5px 10px #888888;
+}
+
+.center{
+  font-size: 100px;
+  margin-top: 6.5%;
+}

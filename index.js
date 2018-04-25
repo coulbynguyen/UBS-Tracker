@@ -2,7 +2,7 @@
 // state = 2 -> A-2
 // state = 3 -> B-1
 // state = 4 -> B-2
-// state = 5 -> A-1 same side
+// state = 5 -> A-1
 
 state = 1; //always start with an A-1 bet
 registry = 5; //need to win 5 units to win a 'coup'
@@ -29,7 +29,7 @@ function changeStrat(isWin){
       state = 1;
     }
     else if(state == 4){
-      state = 5;
+      state = 3;
       //if you win a B-2 bet change bet to A-1 same side bet
     }
 
@@ -49,7 +49,7 @@ function changeStrat(isWin){
     }
     else if(state == 4){
       //if you lose a B-2 bet make an A-1 bet
-      state = 1;
+      state = 5;
     }
   }
 }
@@ -98,7 +98,7 @@ function changeHTML(){
     modelText.innerHTML = "B-2 SAME AS LAST BET";
   }
   else if(state == 5){
-    modelText.innerHTML = "A-1 SAME AS LAST BET";
+    modelText.innerHTML = "A-1 SAME AS LAST WIN";
   }
 
   amountText.innerHTML = "BET " + bet;
